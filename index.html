@@ -10,9 +10,15 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -54,13 +60,18 @@ section{
     padding:110px 0;
 }
 
+
+/* =========================
+   NAVIGATION
+========================= */
+
 nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     z-index:1000;
-    background:rgba(7,8,13,.82);
+    background:rgba(7,8,13,.85);
     backdrop-filter:blur(18px);
     border-bottom:1px solid var(--line);
 }
@@ -105,6 +116,11 @@ nav{
     border-radius:12px;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
     min-height:100vh;
     display:flex;
@@ -121,7 +137,14 @@ nav{
     height:600px;
     right:-250px;
     top:100px;
-    background:radial-gradient(circle,rgba(130,80,255,.20),transparent 65%);
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(130,80,255,.20),
+        transparent 65%
+    );
+
     pointer-events:none;
 }
 
@@ -135,11 +158,14 @@ nav{
 .badge{
     display:inline-flex;
     padding:9px 16px;
+
     border:1px solid rgba(155,124,255,.45);
     border-radius:30px;
+
     color:#c9baff;
     font-size:13px;
     margin-bottom:25px;
+
     background:rgba(155,124,255,.06);
 }
 
@@ -151,7 +177,12 @@ nav{
 }
 
 .gradient{
-    background:linear-gradient(90deg,#9b7cff,#f29adf);
+    background:linear-gradient(
+        90deg,
+        #9b7cff,
+        #f29adf
+    );
+
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
@@ -175,11 +206,17 @@ nav{
     display:inline-flex;
     align-items:center;
     justify-content:center;
+
     padding:15px 24px;
+
     border-radius:13px;
     font-weight:700;
+
     border:1px solid var(--line);
+
     transition:.3s;
+
+    cursor:pointer;
 }
 
 .btn-primary{
@@ -189,7 +226,9 @@ nav{
 
 .btn-primary:hover{
     transform:translateY(-3px);
-    box-shadow:0 15px 35px rgba(255,255,255,.12);
+
+    box-shadow:
+    0 15px 35px rgba(255,255,255,.12);
 }
 
 .btn-dark{
@@ -202,52 +241,98 @@ nav{
     transform:translateY(-3px);
 }
 
+
+/* =========================
+   HERO PHOTO CARD
+========================= */
+
 .hero-card{
-    min-height:480px;
+    min-height:520px;
+
     border:1px solid var(--line);
     border-radius:30px;
+
     background:
-        radial-gradient(circle at 70% 20%,rgba(242,154,223,.20),transparent 28%),
-        radial-gradient(circle at 20% 75%,rgba(91,104,255,.22),transparent 30%),
-        #10111a;
+    radial-gradient(
+        circle at 75% 15%,
+        rgba(242,154,223,.20),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 20% 85%,
+        rgba(91,104,255,.24),
+        transparent 35%
+    ),
+
+    #10111a;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     position:relative;
+
+    overflow:hidden;
+
     transform:rotate(2deg);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.35);
 }
 
-.hero-card-inner{
-    width:82%;
-    height:75%;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:22px;
-    background:rgba(10,11,17,.65);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:45px;
+.hero-photo{
+    width:86%;
+    height:88%;
+
+    object-fit:cover;
+    object-position:center top;
+
+    border:1px solid rgba(255,255,255,.16);
+
+    border-radius:24px;
+
+    display:block;
+
+    filter:saturate(1.05);
+
+    box-shadow:
+    0 25px 55px rgba(0,0,0,.45);
 }
 
-.initials{
-    font-size:100px;
-    font-weight:800;
-    line-height:1;
-    background:linear-gradient(90deg,#fff,#a78bfa,#f29adf);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
+.hero-photo-overlay{
+    position:absolute;
+
+    left:7%;
+    right:7%;
+    bottom:6%;
+
+    padding:70px 28px 25px;
+
+    border-radius:0 0 22px 22px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        transparent,
+        rgba(5,6,12,.94)
+    );
 }
 
-.hero-card h3{
-    font-size:25px;
-    margin-top:25px;
+.hero-photo-overlay h3{
+    font-size:24px;
 }
 
-.hero-card p{
-    font-size:15px;
-    margin-top:8px;
+.hero-photo-overlay p{
+    font-size:14px;
+    color:#c4c8d6;
+    margin-top:5px;
 }
+
+
+/* =========================
+   SECTION HEAD
+========================= */
 
 .section-head{
     text-align:center;
@@ -275,6 +360,11 @@ nav{
     margin-top:15px;
 }
 
+
+/* =========================
+   ABOUT
+========================= */
+
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -284,8 +374,16 @@ nav{
 
 .about-box{
     padding:38px;
+
     border:1px solid var(--line);
-    background:linear-gradient(145deg,#11131d,#0c0d13);
+
+    background:
+    linear-gradient(
+        145deg,
+        #11131d,
+        #0c0d13
+    );
+
     border-radius:24px;
 }
 
@@ -307,8 +405,11 @@ nav{
 
 .stat{
     padding:27px;
+
     border:1px solid var(--line);
+
     border-radius:18px;
+
     background:#0d0f17;
 }
 
@@ -322,6 +423,11 @@ nav{
     font-size:13px;
 }
 
+
+/* =========================
+   SERVICES
+========================= */
+
 .services{
     background:#090a10;
 }
@@ -334,26 +440,43 @@ nav{
 
 .service{
     padding:28px;
+
     border:1px solid var(--line);
+
     border-radius:20px;
-    background:linear-gradient(145deg,#11131c,#0b0c12);
+
+    background:
+    linear-gradient(
+        145deg,
+        #11131c,
+        #0b0c12
+    );
+
     transition:.35s;
 }
 
 .service:hover{
     transform:translateY(-7px);
-    border-color:rgba(155,124,255,.5);
+
+    border-color:
+    rgba(155,124,255,.5);
 }
 
 .icon{
     width:48px;
     height:48px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     border-radius:14px;
-    background:rgba(155,124,255,.12);
+
+    background:
+    rgba(155,124,255,.12);
+
     font-size:23px;
+
     margin-bottom:20px;
 }
 
@@ -367,6 +490,11 @@ nav{
     font-size:13px;
 }
 
+
+/* =========================
+   PORTFOLIO
+========================= */
+
 .portfolio-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -375,17 +503,25 @@ nav{
 
 .project{
     position:relative;
+
     overflow:hidden;
+
     border-radius:20px;
+
     border:1px solid var(--line);
+
     background:#111;
 }
 
 .project img{
     width:100%;
+
     display:block;
+
     aspect-ratio:16/10;
+
     object-fit:cover;
+
     transition:.5s;
 }
 
@@ -395,11 +531,18 @@ nav{
 
 .project-overlay{
     position:absolute;
+
     left:0;
     right:0;
     bottom:0;
+
     padding:30px 25px 23px;
-    background:linear-gradient(transparent,rgba(0,0,0,.95));
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.95)
+    );
 }
 
 .project-overlay h3{
@@ -411,31 +554,59 @@ nav{
     font-size:13px;
 }
 
+
+/* =========================
+   SKILLS
+========================= */
+
 .skills{
     display:flex;
+
     flex-wrap:wrap;
+
     justify-content:center;
+
     gap:12px;
+
     margin-top:35px;
 }
 
 .skill{
     padding:10px 16px;
+
     border:1px solid var(--line);
+
     border-radius:30px;
+
     color:#c6c9d5;
+
     background:#0e1017;
+
     font-size:13px;
 }
 
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact-box{
     text-align:center;
+
     padding:75px 30px;
+
     border-radius:30px;
+
     border:1px solid var(--line);
+
     background:
-        radial-gradient(circle at center,rgba(124,88,255,.16),transparent 55%),
-        #10111a;
+    radial-gradient(
+        circle at center,
+        rgba(124,88,255,.16),
+        transparent 55%
+    ),
+
+    #10111a;
 }
 
 .contact-box h2{
@@ -445,9 +616,16 @@ nav{
 
 .contact-box p{
     color:var(--muted);
+
     max-width:650px;
+
     margin:18px auto 0;
 }
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     border-top:1px solid var(--line);
@@ -456,20 +634,32 @@ footer{
 
 .footer-inner{
     display:flex;
+
     justify-content:space-between;
+
     gap:20px;
+
     color:#7e8499;
+
     font-size:13px;
 }
 
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:900px){
+
     .hero-grid,
     .about-grid{
         grid-template-columns:1fr;
     }
 
     .hero-card{
-        min-height:400px;
+        min-height:480px;
+        max-width:650px;
+        margin:auto;
     }
 
     .services-grid{
@@ -477,7 +667,9 @@ footer{
     }
 }
 
+
 @media(max-width:650px){
+
     section{
         padding:80px 0;
     }
@@ -499,10 +691,7 @@ footer{
         font-size:16px;
     }
 
-    .portfolio-grid{
-        grid-template-columns:1fr;
-    }
-
+    .portfolio-grid,
     .services-grid{
         grid-template-columns:1fr;
     }
@@ -516,12 +705,19 @@ footer{
         grid-template-columns:1fr 1fr;
     }
 
-    .hero-card-inner{
-        padding:28px;
+    .hero-card{
+        min-height:430px;
     }
 
-    .initials{
-        font-size:70px;
+    .hero-photo{
+        width:90%;
+        height:88%;
+    }
+
+    .hero-photo-overlay{
+        left:5%;
+        right:5%;
+        bottom:5%;
     }
 
     .footer-inner{
@@ -529,70 +725,135 @@ footer{
         text-align:center;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
+
 <div class="container nav-inner">
 
-<a href="#home" class="logo">Waleed<span>.</span></a>
+<a href="#home" class="logo">
+Waleed<span>.</span>
+</a>
 
 <div class="nav-links">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#contact" class="nav-btn">Let's Talk</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#portfolio">
+Portfolio
+</a>
+
+<a href="#contact" class="nav-btn">
+Let's Talk
+</a>
+
 </div>
 
 </div>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
+
 <div class="container hero-grid">
 
+
 <div>
-<div class="badge">✦ Available for freelance projects</div>
+
+<div class="badge">
+✦ Available for freelance projects
+</div>
+
 
 <h1>
+
 Hafiz<br>
+
 Muhammad<br>
-<span class="gradient">Waleed.</span>
+
+<span class="gradient">
+Waleed.
+</span>
+
 </h1>
 
+
 <p>
-Professional Graphic Designer creating modern, memorable and
-high-impact visual designs that help brands stand out.
+
+Professional Graphic Designer creating modern,
+memorable and high-impact visual designs
+that help brands stand out.
+
 </p>
+
 
 <div class="buttons">
 
-<a href="#portfolio" class="btn btn-primary">
+
+<a
+href="#portfolio"
+class="btn btn-primary">
+
 View My Work →
+
 </a>
 
-<a href="https://wa.me/923124736031?text=Hello%20Hafiz%20Muhammad%20Waleed%2C%20I%20would%20like%20to%20discuss%20a%20graphic%20design%20project."
+
+<!-- EMAIL BUTTON -->
+
+<a
+href="https://mail.google.com/mail/?view=cm&fs=1&to=hwaleed861@gmail.com&su=Graphic%20Design%20Project%20Inquiry"
 target="_blank"
 rel="noopener noreferrer"
 class="btn btn-dark">
-Hire Me
+
+Email Me
+
 </a>
 
-</div>
+
 </div>
 
+</div>
+
+
+<!-- PHOTO -->
 
 <div class="hero-card">
 
-<div class="hero-card-inner">
+<img
+src="waleed.jpg"
+alt="Hafiz Muhammad Waleed Graphic Designer"
+class="hero-photo"
+>
 
-<div class="initials">HW</div>
 
-<h3>Graphic Designer</h3>
+<div class="hero-photo-overlay">
+
+<h3>
+Graphic Designer
+</h3>
 
 <p>
 Branding • Visual Identity • Digital Design
@@ -602,44 +863,74 @@ Branding • Visual Identity • Digital Design
 
 </div>
 
+
 </div>
+
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section id="about">
+
 <div class="container">
 
+
 <div class="section-head">
-<div class="kicker">About Me</div>
-<h2>Designing ideas into impact.</h2>
+
+<div class="kicker">
+About Me
+</div>
+
+<h2>
+Designing ideas into impact.
+</h2>
+
 <p>
 Creative design solutions built to make brands look professional,
 memorable and trustworthy.
 </p>
+
 </div>
 
 
 <div class="about-grid">
 
+
 <div class="about-box">
 
-<h3>Hello, I'm Hafiz Muhammad Waleed.</h3>
+<h3>
+Hello, I'm Hafiz Muhammad Waleed.
+</h3>
+
 
 <p>
-I'm a professional Graphic Designer focused on creating clean,
-modern and visually powerful designs for businesses, creators
-and personal brands.
+
+I'm a professional Graphic Designer focused
+on creating clean, modern and visually powerful
+designs for businesses, creators and personal brands.
+
 </p>
 
+
 <p>
-My goal is simple: understand your idea, turn it into a strong
-visual concept and deliver a design that looks professional
+
+My goal is simple: understand your idea,
+turn it into a strong visual concept and
+deliver a design that looks professional
 across digital and print platforms.
+
 </p>
 
-<a href="#contact" class="btn btn-dark">
+
+<a
+href="#contact"
+class="btn btn-dark">
+
 Let's Work Together →
+
 </a>
 
 </div>
@@ -647,293 +938,587 @@ Let's Work Together →
 
 <div class="stats">
 
-<div class="stat">
-<strong>8+</strong>
-<span>Design Services</span>
-</div>
 
 <div class="stat">
-<strong>8</strong>
-<span>Portfolio Showcases</span>
+
+<strong>
+8+
+</strong>
+
+<span>
+Design Services
+</span>
+
 </div>
+
 
 <div class="stat">
-<strong>100%</strong>
-<span>Creative Focus</span>
+
+<strong>
+8
+</strong>
+
+<span>
+Portfolio Showcases
+</span>
+
 </div>
+
 
 <div class="stat">
-<strong>24/7</strong>
-<span>Freelance Availability</span>
+
+<strong>
+100%
+</strong>
+
+<span>
+Creative Focus
+</span>
+
 </div>
+
+
+<div class="stat">
+
+<strong>
+24/7
+</strong>
+
+<span>
+Freelance Availability
+</span>
+
+</div>
+
 
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- SERVICES -->
+<!-- =========================
+     SERVICES
+========================= -->
+
 <section class="services" id="services">
 
 <div class="container">
 
+
 <div class="section-head">
-<div class="kicker">What I Do</div>
-<h2>Creative services for modern brands.</h2>
+
+<div class="kicker">
+What I Do
+</div>
+
+<h2>
+Creative services for modern brands.
+</h2>
+
 <p>
-From logos to complete visual identities, I create designs
-that communicate clearly and look professional.
+From logos to complete visual identities,
+I create designs that communicate clearly
+and look professional.
 </p>
+
 </div>
 
 
 <div class="services-grid">
 
-<div class="service">
-<div class="icon">✦</div>
-<h3>Logo Design</h3>
-<p>Unique, modern and memorable logos designed around your brand.</p>
-</div>
 
 <div class="service">
-<div class="icon">◈</div>
-<h3>Brand Identity</h3>
-<p>Complete visual systems including colors, typography and brand assets.</p>
+
+<div class="icon">
+✦
 </div>
+
+<h3>
+Logo Design
+</h3>
+
+<p>
+Unique, modern and memorable logos
+designed around your brand.
+</p>
+
+</div>
+
 
 <div class="service">
-<div class="icon">◎</div>
-<h3>Social Media Design</h3>
-<p>Eye-catching posts, ads, banners, covers and social graphics.</p>
+
+<div class="icon">
+◈
 </div>
+
+<h3>
+Brand Identity
+</h3>
+
+<p>
+Complete visual systems including colors,
+typography and brand assets.
+</p>
+
+</div>
+
 
 <div class="service">
-<div class="icon">▶</div>
-<h3>YouTube Thumbnails</h3>
-<p>High-impact thumbnail designs created to attract attention.</p>
+
+<div class="icon">
+◎
 </div>
+
+<h3>
+Social Media Design
+</h3>
+
+<p>
+Eye-catching posts, ads, banners,
+covers and social graphics.
+</p>
+
+</div>
+
 
 <div class="service">
-<div class="icon">▣</div>
-<h3>Business Cards</h3>
-<p>Professional business cards that create a strong first impression.</p>
+
+<div class="icon">
+▶
 </div>
+
+<h3>
+YouTube Thumbnails
+</h3>
+
+<p>
+High-impact thumbnail designs
+created to attract attention.
+</p>
+
+</div>
+
 
 <div class="service">
-<div class="icon">◫</div>
-<h3>Flyers & Posters</h3>
-<p>Creative promotional designs for events, offers and businesses.</p>
+
+<div class="icon">
+▣
 </div>
+
+<h3>
+Business Cards
+</h3>
+
+<p>
+Professional business cards that create
+a strong first impression.
+</p>
+
+</div>
+
 
 <div class="service">
-<div class="icon">▤</div>
-<h3>Packaging Design</h3>
-<p>Modern product packaging designed to make your brand stand out.</p>
+
+<div class="icon">
+◫
 </div>
+
+<h3>
+Flyers & Posters
+</h3>
+
+<p>
+Creative promotional designs for
+events, offers and businesses.
+</p>
+
+</div>
+
 
 <div class="service">
-<div class="icon">◆</div>
-<h3>Advertising Design</h3>
-<p>Creative promotional visuals for digital and print campaigns.</p>
+
+<div class="icon">
+▤
+</div>
+
+<h3>
+Packaging Design
+</h3>
+
+<p>
+Modern product packaging designed
+to make your brand stand out.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">
+◆
+</div>
+
+<h3>
+Advertising Design
+</h3>
+
+<p>
+Creative promotional visuals for
+digital and print campaigns.
+</p>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
 
-<!-- PORTFOLIO -->
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
 <section id="portfolio">
 
 <div class="container">
 
+
 <div class="section-head">
-<div class="kicker">Selected Work</div>
-<h2>My Portfolio</h2>
+
+<div class="kicker">
+Selected Work
+</div>
+
+<h2>
+My Portfolio
+</h2>
+
 <p>
-A selection of creative projects and design showcases.
+A selection of creative projects
+and design showcases.
 </p>
+
 </div>
 
 
 <div class="portfolio-grid">
 
 
-<!-- 1 -->
+<!-- LOGO -->
+
 <div class="project">
 
-<img src="Luxury%20Logo%20Design%20Portfolio%20Showcase.png"
-alt="Logo Design Portfolio">
+<img
+src="Luxury%20Logo%20Design%20Portfolio%20Showcase.png"
+alt="Logo Design Portfolio"
+>
 
 <div class="project-overlay">
-<h3>Logo Design</h3>
-<p>Modern & Professional Logo Design</p>
-</div>
+
+<h3>
+Logo Design
+</h3>
+
+<p>
+Modern & Professional Logo Design
+</p>
 
 </div>
 
+</div>
 
-<!-- 2 -->
+
+<!-- SOCIAL MEDIA -->
+
 <div class="project">
 
-<img src="Blue%20Social%20Media%20Design%20Showcase.png"
-alt="Social Media Design Portfolio">
+<img
+src="Blue%20Social%20Media%20Design%20Showcase.png"
+alt="Social Media Design Portfolio"
+>
 
 <div class="project-overlay">
-<h3>Social Media Design</h3>
-<p>Creative Social Media Graphics</p>
-</div>
+
+<h3>
+Social Media Design
+</h3>
+
+<p>
+Creative Social Media Graphics
+</p>
 
 </div>
 
+</div>
 
-<!-- 3 -->
+
+<!-- YOUTUBE -->
+
 <div class="project">
 
-<img src="YouTube%20Thumbnail%20Design%20Portfolio.png"
-alt="YouTube Thumbnail Design">
+<img
+src="YouTube%20Thumbnail%20Design%20Portfolio.png"
+alt="YouTube Thumbnail Design"
+>
 
 <div class="project-overlay">
-<h3>YouTube Thumbnail Design</h3>
-<p>High-impact thumbnails for creators</p>
-</div>
+
+<h3>
+YouTube Thumbnail Design
+</h3>
+
+<p>
+High-impact thumbnails for creators
+</p>
 
 </div>
 
+</div>
 
-<!-- 4 -->
+
+<!-- BUSINESS CARD -->
+
 <div class="project">
 
-<img src="Creative%20Business%20Card%20Showcase.png"
-alt="Business Card Design">
+<img
+src="Creative%20Business%20Card%20Showcase.png"
+alt="Business Card Design"
+>
 
 <div class="project-overlay">
-<h3>Business Card Design</h3>
-<p>Professional business card concepts</p>
-</div>
+
+<h3>
+Business Card Design
+</h3>
+
+<p>
+Professional business card concepts
+</p>
 
 </div>
 
+</div>
 
-<!-- 5 -->
+
+<!-- FLYER -->
+
 <div class="project">
 
-<img src="Flyer%20%26%20Poster%20Design%20Portfolio.png"
-alt="Flyer and Poster Design">
+<img
+src="Flyer%20%26%20Poster%20Design%20Portfolio.png"
+alt="Flyer and Poster Design"
+>
 
 <div class="project-overlay">
-<h3>Flyer & Poster Design</h3>
-<p>Creative promotional designs</p>
-</div>
+
+<h3>
+Flyer & Poster Design
+</h3>
+
+<p>
+Creative promotional designs
+</p>
 
 </div>
 
+</div>
 
-<!-- 6 -->
+
+<!-- BRAND IDENTITY -->
+
 <div class="project">
 
-<img src="Aurora%20Luxury%20Brand%20Identity%20Showcase.png"
-alt="Brand Identity Design">
+<img
+src="Aurora%20Luxury%20Brand%20Identity%20Showcase.png"
+alt="Brand Identity Design"
+>
 
 <div class="project-overlay">
-<h3>Brand Identity</h3>
-<p>Complete visual brand identity</p>
-</div>
+
+<h3>
+Brand Identity
+</h3>
+
+<p>
+Complete visual brand identity
+</p>
 
 </div>
 
+</div>
 
-<!-- 7 -->
+
+<!-- PACKAGING -->
+
 <div class="project">
 
-<img src="Creative%20Packaging%20Design%20Portfolio.png"
-alt="Packaging Design">
+<img
+src="Creative%20Packaging%20Design%20Portfolio.png"
+alt="Packaging Design"
+>
 
 <div class="project-overlay">
-<h3>Packaging Design</h3>
-<p>Modern product packaging concepts</p>
-</div>
+
+<h3>
+Packaging Design
+</h3>
+
+<p>
+Modern product packaging concepts
+</p>
 
 </div>
 
+</div>
 
-<!-- 8 -->
+
+<!-- GRAPHIC DESIGN -->
+
 <div class="project">
 
-<img src="Graphic%20Design%20Services%20Portfolio.png"
-alt="Graphic Design Services">
+<img
+src="Graphic%20Design%20Services%20Portfolio.png"
+alt="Graphic Design Services"
+>
 
 <div class="project-overlay">
-<h3>Graphic Design</h3>
-<p>Complete graphic design showcase</p>
+
+<h3>
+Graphic Design
+</h3>
+
+<p>
+Complete graphic design showcase
+</p>
+
 </div>
 
 </div>
+
 
 </div>
 
 
 <div class="skills">
 
-<span class="skill">Adobe Photoshop</span>
-<span class="skill">Adobe Illustrator</span>
-<span class="skill">Adobe InDesign</span>
-<span class="skill">Figma</span>
-<span class="skill">Branding</span>
-<span class="skill">Visual Identity</span>
+<span class="skill">
+Adobe Photoshop
+</span>
+
+<span class="skill">
+Adobe Illustrator
+</span>
+
+<span class="skill">
+Adobe InDesign
+</span>
+
+<span class="skill">
+Figma
+</span>
+
+<span class="skill">
+Branding
+</span>
+
+<span class="skill">
+Visual Identity
+</span>
 
 </div>
 
+
 </div>
+
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
+
 <section id="contact">
 
 <div class="container">
 
+
 <div class="contact-box">
 
-<div class="kicker">Let's Connect</div>
 
-<h2>Let's Create Something Great.</h2>
+<div class="kicker">
+Let's Connect
+</div>
+
+
+<h2>
+Let's Create Something Great.
+</h2>
+
 
 <p>
-Have a project in mind? Let's work together and create a visual
+
+Have a project in mind?
+Let's work together and create a visual
 identity that makes your brand stand out.
+
 </p>
 
 
-<div class="buttons" style="justify-content:center;">
+<div
+class="buttons"
+style="justify-content:center;"
+>
+
 
 <!-- GMAIL -->
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=hwaleed861@gmail.com"
+
+<a
+href="https://mail.google.com/mail/?view=cm&fs=1&to=hwaleed861@gmail.com&su=Graphic%20Design%20Project%20Inquiry"
 target="_blank"
 rel="noopener noreferrer"
-class="btn btn-primary">
+class="btn btn-primary"
+>
+
 Email Me →
+
 </a>
 
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/923124736031?text=Hello%20Hafiz%20Muhammad%20Waleed%2C%20I%20would%20like%20to%20discuss%20a%20graphic%20design%20project."
+
+<a
+href="https://wa.me/923124736031?text=Hello%20Hafiz%20Muhammad%20Waleed%2C%20I%20would%20like%20to%20discuss%20a%20graphic%20design%20project."
 target="_blank"
-class="btn btn-dark">
+rel="noopener noreferrer"
+class="btn btn-dark"
+>
+
 WhatsApp
+
 </a>
 
+
 </div>
 
 </div>
+
 </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
 <div class="container footer-inner">
